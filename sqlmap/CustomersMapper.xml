@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.CustomersMapper">
+  <resultMap id="BaseResultMap" type="model.Customers">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <id column="customer_id" jdbcType="INTEGER" property="customerId" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="customer_phone" jdbcType="VARCHAR" property="customerPhone" />
+    <result column="customer_address" jdbcType="VARCHAR" property="customerAddress" />
+    <result column="customer_city" jdbcType="VARCHAR" property="customerCity" />
+    <result column="customer_state" jdbcType="VARCHAR" property="customerState" />
+    <result column="customer_zip" jdbcType="VARCHAR" property="customerZip" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    customer_id, customer_name, customer_phone, customer_address, customer_city, customer_state, 
+    customer_zip
+  </sql>
+  <select id="selectByExample" parameterType="model.CustomersExample" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from customers
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select 
+    <include refid="Base_Column_List" />
+    from customers
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from customers
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="model.CustomersExample">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from customers
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="model.Customers">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into customers (customer_id, customer_name, customer_phone, 
+      customer_address, customer_city, customer_state, 
+      customer_zip)
+    values (#{customerId,jdbcType=INTEGER}, #{customerName,jdbcType=VARCHAR}, #{customerPhone,jdbcType=VARCHAR}, 
+      #{customerAddress,jdbcType=VARCHAR}, #{customerCity,jdbcType=VARCHAR}, #{customerState,jdbcType=VARCHAR}, 
+      #{customerZip,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.Customers">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into customers
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="customerName != null">
+        customer_name,
+      </if>
+      <if test="customerPhone != null">
+        customer_phone,
+      </if>
+      <if test="customerAddress != null">
+        customer_address,
+      </if>
+      <if test="customerCity != null">
+        customer_city,
+      </if>
+      <if test="customerState != null">
+        customer_state,
+      </if>
+      <if test="customerZip != null">
+        customer_zip,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="customerId != null">
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="customerName != null">
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPhone != null">
+        #{customerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAddress != null">
+        #{customerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="customerCity != null">
+        #{customerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="customerState != null">
+        #{customerState,jdbcType=VARCHAR},
+      </if>
+      <if test="customerZip != null">
+        #{customerZip,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="model.CustomersExample" resultType="java.lang.Long">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select count(*) from customers
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update customers
+    <set>
+      <if test="record.customerId != null">
+        customer_id = #{record.customerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.customerName != null">
+        customer_name = #{record.customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerPhone != null">
+        customer_phone = #{record.customerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerAddress != null">
+        customer_address = #{record.customerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerCity != null">
+        customer_city = #{record.customerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerState != null">
+        customer_state = #{record.customerState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerZip != null">
+        customer_zip = #{record.customerZip,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update customers
+    set customer_id = #{record.customerId,jdbcType=INTEGER},
+      customer_name = #{record.customerName,jdbcType=VARCHAR},
+      customer_phone = #{record.customerPhone,jdbcType=VARCHAR},
+      customer_address = #{record.customerAddress,jdbcType=VARCHAR},
+      customer_city = #{record.customerCity,jdbcType=VARCHAR},
+      customer_state = #{record.customerState,jdbcType=VARCHAR},
+      customer_zip = #{record.customerZip,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="model.Customers">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update customers
+    <set>
+      <if test="customerName != null">
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPhone != null">
+        customer_phone = #{customerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAddress != null">
+        customer_address = #{customerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="customerCity != null">
+        customer_city = #{customerCity,jdbcType=VARCHAR},
+      </if>
+      <if test="customerState != null">
+        customer_state = #{customerState,jdbcType=VARCHAR},
+      </if>
+      <if test="customerZip != null">
+        customer_zip = #{customerZip,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.Customers">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update customers
+    set customer_name = #{customerName,jdbcType=VARCHAR},
+      customer_phone = #{customerPhone,jdbcType=VARCHAR},
+      customer_address = #{customerAddress,jdbcType=VARCHAR},
+      customer_city = #{customerCity,jdbcType=VARCHAR},
+      customer_state = #{customerState,jdbcType=VARCHAR},
+      customer_zip = #{customerZip,jdbcType=VARCHAR}
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </update>
+</mapper>
