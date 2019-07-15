@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.OrdersMapper">
+  <resultMap id="BaseResultMap" type="model.Orders">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <id column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="order_customer_id" jdbcType="INTEGER" property="orderCustomerId" />
+    <result column="order_date" jdbcType="TIMESTAMP" property="orderDate" />
+    <result column="order_ship_address" jdbcType="VARCHAR" property="orderShipAddress" />
+    <result column="order_ship_city" jdbcType="VARCHAR" property="orderShipCity" />
+    <result column="order_ship_state" jdbcType="VARCHAR" property="orderShipState" />
+    <result column="order_ship_zip" jdbcType="VARCHAR" property="orderShipZip" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    order_id, order_customer_id, order_date, order_ship_address, order_ship_city, order_ship_state, 
+    order_ship_zip
+  </sql>
+  <select id="selectByExample" parameterType="model.OrdersExample" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from orders
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="model.OrdersExample">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="model.Orders">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into orders (order_id, order_customer_id, order_date, 
+      order_ship_address, order_ship_city, order_ship_state, 
+      order_ship_zip)
+    values (#{orderId,jdbcType=INTEGER}, #{orderCustomerId,jdbcType=INTEGER}, #{orderDate,jdbcType=TIMESTAMP}, 
+      #{orderShipAddress,jdbcType=VARCHAR}, #{orderShipCity,jdbcType=VARCHAR}, #{orderShipState,jdbcType=VARCHAR}, 
+      #{orderShipZip,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.Orders">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="orderCustomerId != null">
+        order_customer_id,
+      </if>
+      <if test="orderDate != null">
+        order_date,
+      </if>
+      <if test="orderShipAddress != null">
+        order_ship_address,
+      </if>
+      <if test="orderShipCity != null">
+        order_ship_city,
+      </if>
+      <if test="orderShipState != null">
+        order_ship_state,
+      </if>
+      <if test="orderShipZip != null">
+        order_ship_zip,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderCustomerId != null">
+        #{orderCustomerId,jdbcType=INTEGER},
+      </if>
+      <if test="orderDate != null">
+        #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderShipAddress != null">
+        #{orderShipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="orderShipCity != null">
+        #{orderShipCity,jdbcType=VARCHAR},
+      </if>
+      <if test="orderShipState != null">
+        #{orderShipState,jdbcType=VARCHAR},
+      </if>
+      <if test="orderShipZip != null">
+        #{orderShipZip,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="model.OrdersExample" resultType="java.lang.Long">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select count(*) from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update orders
+    <set>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderCustomerId != null">
+        order_customer_id = #{record.orderCustomerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderDate != null">
+        order_date = #{record.orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.orderShipAddress != null">
+        order_ship_address = #{record.orderShipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderShipCity != null">
+        order_ship_city = #{record.orderShipCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderShipState != null">
+        order_ship_state = #{record.orderShipState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderShipZip != null">
+        order_ship_zip = #{record.orderShipZip,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update orders
+    set order_id = #{record.orderId,jdbcType=INTEGER},
+      order_customer_id = #{record.orderCustomerId,jdbcType=INTEGER},
+      order_date = #{record.orderDate,jdbcType=TIMESTAMP},
+      order_ship_address = #{record.orderShipAddress,jdbcType=VARCHAR},
+      order_ship_city = #{record.orderShipCity,jdbcType=VARCHAR},
+      order_ship_state = #{record.orderShipState,jdbcType=VARCHAR},
+      order_ship_zip = #{record.orderShipZip,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="model.Orders">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update orders
+    <set>
+      <if test="orderCustomerId != null">
+        order_customer_id = #{orderCustomerId,jdbcType=INTEGER},
+      </if>
+      <if test="orderDate != null">
+        order_date = #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderShipAddress != null">
+        order_ship_address = #{orderShipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="orderShipCity != null">
+        order_ship_city = #{orderShipCity,jdbcType=VARCHAR},
+      </if>
+      <if test="orderShipState != null">
+        order_ship_state = #{orderShipState,jdbcType=VARCHAR},
+      </if>
+      <if test="orderShipZip != null">
+        order_ship_zip = #{orderShipZip,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.Orders">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update orders
+    set order_customer_id = #{orderCustomerId,jdbcType=INTEGER},
+      order_date = #{orderDate,jdbcType=TIMESTAMP},
+      order_ship_address = #{orderShipAddress,jdbcType=VARCHAR},
+      order_ship_city = #{orderShipCity,jdbcType=VARCHAR},
+      order_ship_state = #{orderShipState,jdbcType=VARCHAR},
+      order_ship_zip = #{orderShipZip,jdbcType=VARCHAR}
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+</mapper>
