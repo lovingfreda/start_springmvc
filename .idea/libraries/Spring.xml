@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="Spring" type="spring">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-aop-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-aspects-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-beans-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-context-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-context-support-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-core-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-expression-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-instrument-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-instrument-tomcat-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-jdbc-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-jms-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-messaging-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-orm-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-oxm-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-test-4.3.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../run_time/alpha_tony_repo/Spring-4.3.18.GLOBAL/spring-tx-4.3.18.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
