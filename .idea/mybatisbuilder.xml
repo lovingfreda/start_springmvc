@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MybatisBuilder.project.settings">
+    <option name="connectionInfoList">
+      <list>
+        <ConnectionInfo>
+          <option name="database" value="ship" />
+          <option name="description" value="student of SL build it " />
+          <option name="driverClass" value="" />
+          <option name="driverLibrary" value="" />
+          <option name="driverType" value="MySQL" />
+          <option name="host" value="localhost" />
+          <option name="id" value="0290059a86624a29aa099b4834c95e77" />
+          <option name="name" value="ship@localhost" />
+          <option name="port" value="3306" />
+          <option name="url" value="" />
+          <option name="userName" value="root" />
+        </ConnectionInfo>
+        <ConnectionInfo>
+          <option name="database" value="intranet" />
+          <option name="description" value="Aliyun IDC 120.25.106.183, YuBin Server" />
+          <option name="driverClass" value="" />
+          <option name="driverLibrary" value="" />
+          <option name="driverType" value="MySQL" />
+          <option name="host" value="120.25.106.183" />
+          <option name="id" value="cce72e2e10a544d9bf314016ec6beca6" />
+          <option name="name" value="Intranet@IDC_YuBin" />
+          <option name="port" value="3306" />
+          <option name="url" value="" />
+          <option name="userName" value="root" />
+        </ConnectionInfo>
+      </list>
+    </option>
+    <option name="defaultParameters">
+      <DefaultParameters>
+        <option name="renameConfig">
+          <Config>
+            <option name="mapperTypePattern" value="" />
+            <option name="exampleTypePattern" value="" />
+            <option name="sqlFileNamePattern" value="" />
+          </Config>
+        </option>
+        <option name="selectWithLockConfig">
+          <SelectWithLockConfig>
+            <option name="byPrimaryKeyWithLockOverride" value="" />
+            <option name="byExampleWithLockOverride" value="" />
+          </SelectWithLockConfig>
+        </option>
+      </DefaultParameters>
+    </option>
+    <option name="lastGeneratorParamWrapper">
+      <GeneratorParamWrapper>
+        <option name="defaultTableConfigWrapper">
+          <TableConfigurationWrapper>
+            <option name="domainObjectRenamingRule">
+              <DomainObjectRenamingRule>
+                <option name="replaceString" value="" />
+                <option name="searchString" value="" />
+              </DomainObjectRenamingRule>
+            </option>
+            <option name="generatedKeyWrapper">
+              <GeneratedKeyWrapper>
+                <option name="column" value="" />
+              </GeneratedKeyWrapper>
+            </option>
+          </TableConfigurationWrapper>
+        </option>
+        <option name="javaClientConfig">
+          <JavaClientGeneratorConfiguration>
+            <option name="configurationType" value="XMLMAPPER" />
+            <option name="targetPackage" value="mapper" />
+            <option name="targetProject" value="$PROJECT_DIR$" />
+          </JavaClientGeneratorConfiguration>
+        </option>
+        <option name="javaModelConfig">
+          <JavaModelGeneratorConfiguration>
+            <option name="targetPackage" value="model" />
+            <option name="targetProject" value="$PROJECT_DIR$" />
+          </JavaModelGeneratorConfiguration>
+        </option>
+        <option name="sqlMapConfig">
+          <SqlMapGeneratorConfiguration>
+            <option name="targetPackage" value="sqlmap" />
+            <option name="targetProject" value="$PROJECT_DIR$" />
+          </SqlMapGeneratorConfiguration>
+        </option>
+      </GeneratorParamWrapper>
+    </option>
+    <option name="tableInfoMap">
+      <map>
+        <entry key="intranet#customers">
+          <value>
+            <TableInfo>
+              <option name="database" value="intranet" />
+              <option name="domainName" value="Customers" />
+              <option name="tableName" value="customers" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="intranet#departments">
+          <value>
+            <TableInfo>
+              <option name="database" value="intranet" />
+              <option name="domainName" value="Departments" />
+              <option name="tableName" value="departments" />
+            </TableInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
