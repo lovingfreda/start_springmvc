@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  Hello, Dear my Loving Girl YangY ~ .$END$
+  Hello, Dear my Loving Girl.$END$
   </body>
 </html>

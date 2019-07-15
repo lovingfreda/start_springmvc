@@ -11,6 +11,6 @@
     <title>Hello Spring MVC</title>
 </head>
 <body>
-<h2>${message} Fucking YangY ~ </h2>
+<h2>${message} ~ </h2>
 </body>
 </html>
