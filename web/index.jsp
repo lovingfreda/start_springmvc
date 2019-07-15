@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  Hello, Dear my Loving Girl.$END$
+  Hello, we success add MAVEN frameworks into SpringMVC project.$END$
   </body>
 </html>
