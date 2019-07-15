@@ -69,19 +69,19 @@
           <JavaClientGeneratorConfiguration>
             <option name="configurationType" value="XMLMAPPER" />
             <option name="targetPackage" value="mapper" />
-            <option name="targetProject" value="$PROJECT_DIR$" />
+            <option name="targetProject" value="$PROJECT_DIR$/src" />
           </JavaClientGeneratorConfiguration>
         </option>
         <option name="javaModelConfig">
           <JavaModelGeneratorConfiguration>
             <option name="targetPackage" value="model" />
-            <option name="targetProject" value="$PROJECT_DIR$" />
+            <option name="targetProject" value="$PROJECT_DIR$/src" />
           </JavaModelGeneratorConfiguration>
         </option>
         <option name="sqlMapConfig">
           <SqlMapGeneratorConfiguration>
             <option name="targetPackage" value="sqlmap" />
-            <option name="targetProject" value="$PROJECT_DIR$" />
+            <option name="targetProject" value="$PROJECT_DIR$/src" />
           </SqlMapGeneratorConfiguration>
         </option>
       </GeneratorParamWrapper>
@@ -103,6 +103,24 @@
               <option name="database" value="intranet" />
               <option name="domainName" value="Departments" />
               <option name="tableName" value="departments" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="intranet#order_items">
+          <value>
+            <TableInfo>
+              <option name="database" value="intranet" />
+              <option name="domainName" value="OrderItems" />
+              <option name="tableName" value="order_items" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="intranet#orders">
+          <value>
+            <TableInfo>
+              <option name="database" value="intranet" />
+              <option name="domainName" value="Orders" />
+              <option name="tableName" value="orders" />
             </TableInfo>
           </value>
         </entry>
